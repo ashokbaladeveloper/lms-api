@@ -2,7 +2,7 @@
   "name": "lms-api",
   "version": "1.0.0",
   "description": "LMS Authentication API with PostgreSQL and SMS password reset",
-  "main": "app.js",
+  "main": "dist/app.js",
   "scripts": {
     "build": "tsc",
     "start": "node app.js",
