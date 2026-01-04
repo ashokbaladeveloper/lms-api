@@ -14,7 +14,6 @@ interface DatabaseConfig {
   max?: number; // Maximum number of clients in the pool
   idleTimeoutMillis?: number; // How long a client is allowed to remain idle
   connectionTimeoutMillis?: number; // How long to wait for a connection
-    ssl: bool; // Enable SSL connection
 }
 
 // Get database configuration from environment variables
