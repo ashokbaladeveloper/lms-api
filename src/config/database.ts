@@ -14,6 +14,7 @@ interface DatabaseConfig {
   max?: number; // Maximum number of clients in the pool
   idleTimeoutMillis?: number; // How long a client is allowed to remain idle
   connectionTimeoutMillis?: number; // How long to wait for a connection
+    ssl: bool; // Enable SSL connection
 }
 
 // Get database configuration from environment variables
@@ -26,6 +27,7 @@ const dbConfig: DatabaseConfig = {
   max: 20, // Maximum 20 clients in the pool
   idleTimeoutMillis: 30000, // Close idle clients after 30 seconds
   connectionTimeoutMillis: 2000, // Return an error after 2 seconds if connection could not be established
+  ssl: true, // Enable SSL connection
 };
 
 // Create PostgreSQL connection pool
@@ -38,6 +40,7 @@ const poolConfig: PoolConfig = {
   max: dbConfig.max,
   idleTimeoutMillis: dbConfig.idleTimeoutMillis,
   connectionTimeoutMillis: dbConfig.connectionTimeoutMillis,
+  ssl:dbConfig.ssl, // Enable SSL connection
 };
 
 // Initialize the connection pool
